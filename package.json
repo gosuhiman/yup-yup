@@ -1,0 +1,11 @@
+{
+  "name": "yup-yup",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo build done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gosuhiman/yup-yup.git"
+  }
+}
