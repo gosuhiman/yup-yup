@@ -1,9 +1,13 @@
+dist: trusty
 sudo: required
+addons:
+  chrome: stable
 services:
   - docker
 
 before_install:
   - docker build -t image -f frontend/Dockerfile.dev ./frontend/
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 script:
   - docker run image npm run test
