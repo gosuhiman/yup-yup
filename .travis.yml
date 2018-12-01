@@ -5,9 +5,7 @@ dist: trusty
 sudo: required
 addons:
   chrome: stable
-cache:
-  directories:
-    - node_modules
+cache: npm
 before_install:
   - cd frontend
   - npm install

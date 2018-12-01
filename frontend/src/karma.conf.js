@@ -25,13 +25,16 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
+    browsers: ['Chrome', 'ChromeHeadless', 'MyHeadlessChrome'],
     customLaunchers: {
-      ChromeHeadlessNoSandbox: {
+      MyHeadlessChrome: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+        flags: ['--disable-translate', '--disable-extensions',
+          '--no-first-run', '--disable-background-networking',
+          '--remote-debugging-port=9223']
       }
     },
-    singleRun: true
+    singleRun: false,
+    concurrency: Infinity
   });
 };
