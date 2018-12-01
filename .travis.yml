@@ -7,10 +7,11 @@ addons:
   chrome: stable
 
 before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - cd frontend
   - npm install
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
 
 script:
-  - cd frontend
   - npm run travis:test
