@@ -1,9 +1,14 @@
-dist: trusty
-sudo: required
+sudo: false
+language: node_js
+node_js:
+  - 11
+
 addons:
   chrome: stable
 
 before_install:
+  - cd frontend
+  - npm install
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
 
 script:
