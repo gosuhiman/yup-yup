@@ -3,7 +3,7 @@ WORKDIR '/app'
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-ENV OLD_SPACE_SIZE=512 GC_INTERVAL=100
+ENV NODE_OPTIONS="--max_old_space_size=4096"
 RUN npm run build-prod
 
 FROM nginx
