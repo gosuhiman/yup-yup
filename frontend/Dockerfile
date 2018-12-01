@@ -3,7 +3,7 @@ WORKDIR '/app'
 COPY package*.json ./
 RUN npm install
 COPY ./ ./
-RUN NODE_OPTIONS=--max-old-space-size=4096
+ENV NODE_OPTIONS="--max-old-space-size=512"
 RUN npm run build-prod
 
 FROM nginx
