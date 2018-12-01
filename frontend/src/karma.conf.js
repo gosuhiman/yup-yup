@@ -34,7 +34,7 @@ module.exports = function (config) {
           '--remote-debugging-port=9223']
       }
     },
-    singleRun: false,
+    singleRun: true,
     concurrency: Infinity
   });
 };
